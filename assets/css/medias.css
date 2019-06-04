@@ -1,0 +1,84 @@
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  html {
+    font-size: 13px;
+  }
+
+  /* text banner */
+  .text-banner h1::before {
+   display: none;
+  }
+
+  
+  .box-right-social, .box-left-social {
+    display: none;
+  }
+  .box-right-mobile {
+    display: initial;
+  }
+
+  .text-banner h1 {
+    font-size: 3rem;
+  }
+
+
+  /* water mark */
+  .text-water {
+    font-size: 3rem;
+  }
+
+  /* produts */
+
+  .product-item {
+    width: 23rem;
+    height: 35rem;  
+  }
+
+  .slick-next-product{
+    right: 0;
+
+  }
+  
+  .slick-prev-product {
+    left: 0;
+  }
+
+  .box-shipping:nth-child(2){
+    padding: 5rem;
+  }
+
+  /* Fixed flor */
+
+  .parallax-flor {
+    width: 16rem;
+  }
+
+  /* footer */
+
+  .logo-footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer h1 {
+    text-align: center;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .social-footer i {
+    font-size: 3rem;
+        margin-bottom: 2rem;
+  }
+
+  .bg-footer {
+    width: 25rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 997px) {
+  .img-blog-1 {
+    height: 14rem;
+  }
+}
