@@ -6,7 +6,7 @@ html {
 
 body {
   /* background-image: -webkit-linear-gradient(bottom,#eef5f5,#ffece9); */
-  background-image: -webkit-linear-gradient(bottom,#e2f1f1,#fbdfda);
+  background-image: -webkit-linear-gradient(bottom,#e2f1f1,#fff1ee);
 }
 
 
@@ -26,7 +26,8 @@ input:focus {
 }
 
 .padding-top-bottom {
-  padding: 7rem 0;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
 }
 
 header {
@@ -382,7 +383,7 @@ header {
 
 .product h1, .blog h1, .instagram h1, .related h1, footer h1, .categories h1  {
   text-align: center;
-  font-size: 30px;
+  font-size: 2.5rem;
   margin-bottom: 4rem;
   color: #222222;
   font-weight: 900;

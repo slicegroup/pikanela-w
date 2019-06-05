@@ -89,7 +89,7 @@ $('.multiple-items').slick({
 
 $('.number-input').find('button').click(function () {
   var that = $(this)
-  that.css('background-color', '#e65540')
+  that.css('background-color', '#d66a7f')
   setTimeout(function () {
     that.css('background-color', '#e6e6e6')
   }, 50)

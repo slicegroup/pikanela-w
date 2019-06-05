@@ -9,8 +9,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Poppins" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
@@ -20,7 +20,7 @@
   <link rel="stylesheet" type="text/css" href="assets/css/medias.css">
 </head>
 
-<body style="background-image:none">
+<body style="">
   <header>
     <div class="container flex-container navbar-product">
       <div class="box-left-social">
@@ -32,15 +32,15 @@
         <i class="fa fa-shopping-bag" aria-hidden="true"></i>
       </div>
     </div>
-    <nav class=" navbar navbar-expand-lg navbar-light container navbar-product">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-        aria-expanded="false" aria-label="Toggle navigation">
+    <nav class=" navbar navbar-expand-xl navbar-light container navbar-product">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Inicio
+            <a class="nav-link" href="index.html">Inicio
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -72,19 +72,19 @@
       </div>
     </nav>
   </header>
-  <nav class=" fixed-2 navbar navbar-expand-lg navbar-light ">
+  <nav class=" fixed-2 navbar navbar-expand-xl navbar-light ">
     <div class="fixed-container container">
       <a href="">
         <img class="logo-fixed" src="assets/img/logo-white2.png" alt="">
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-        aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse nav-flex" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Inicio
+            <a class="nav-link" href="index.html">Inicio
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -115,36 +115,31 @@
   <section class="tab-img">
     <div class="container padding-top-bottom">
       <div class="row">
-        <div class="col-lg-7">
-          <div class="row">
-            <div class="col-3">
-              <div class="nav flex-column nav-pills container" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link active hover" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
-                  aria-controls="v-pills-home" aria-selected="true">
-                  <img src="assets/img/product-1.png">
-                </a>
-                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-                  aria-controls="v-pills-profile" aria-selected="false">
-                  <img src="assets/img/product-2.png">
-                </a>
-                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
-                  aria-controls="v-pills-messages" aria-selected="false">
-                  <img src="assets/img/product-1.png">
-                </a>
-              </div>
+        <div class="col-lg-7 details-flex">
+          <div class="nav vertical-img flex-column nav-pills container" id="v-pills-tab" role="tablist"
+            aria-orientation="vertical">
+            <a class="nav-link active hover" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+              aria-controls="v-pills-home" aria-selected="true">
+              <img src="assets/img/product-1.png">
+            </a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+              aria-controls="v-pills-profile" aria-selected="false">
+              <img src="assets/img/product-2.png">
+            </a>
+            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+              aria-controls="v-pills-messages" aria-selected="false">
+              <img src="assets/img/product-1.png">
+            </a>
+          </div>
+          <div class="tab-content content-details" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              <img src="assets/img/product-1.png">
             </div>
-            <div class="col-9">
-              <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                  <img src="assets/img/product-1.png">
-                </div>
-                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                  <img src="assets/img/product-2.png">
-                </div>
-                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                  <img src="assets/img/product-1.png">
-                </div>
-              </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+              <img src="assets/img/product-2.png">
+            </div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+              <img src="assets/img/product-1.png">
             </div>
           </div>
         </div>
@@ -157,10 +152,10 @@
                 consequat ornare feugiat.</p>
             </div>
             <div class="row">
-              <div class="col-lg-2">
+              <div class="col-2 drop-size">
                 <span>Size</span>
               </div>
-              <div class="col-lg-10">
+              <div class="col-10">
                 <div class="dropdown drop-size">
                   <a class="btn dropdown-toggle" title="Choose an option" href="#" role="button" id="dropdownMenuLink"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -173,10 +168,10 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-2">
+              <div class="col-2 drop-color">
                 <span>Color</span>
               </div>
-              <div class="col-lg-10">
+              <div class="col-10">
                 <div class="dropdown drop-color">
                   <a class="btn dropdown-toggle" href="#" title="Choose an option" role="button" id="dropdownMenuLink"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -199,7 +194,8 @@
                   <div class="number-input">
                     <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
                     <input class="quantity" min="0" name="quantity" value="1" type="number">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                      class="plus"></button>
                   </div>
                   <button class="btn-principal">ADD TO CARD</button>
                 </div>
@@ -207,8 +203,8 @@
             </div>
           </div>
           <div class="info-extra">
-            <a class="btn btn-info-extra" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
-              aria-controls="collapseExample">
+            <a class="btn btn-info-extra" data-toggle="collapse" href="#collapseExample" role="button"
+              aria-expanded="true" aria-controls="collapseExample">
               Descripción
               <i class="fa fa-minus" aria-hidden="true"></i>
             </a>
@@ -221,8 +217,8 @@
             </div>
           </div>
           <div class="info-extra">
-            <a class="btn btn-info-extra" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="true"
-              aria-controls="collapseExample2">
+            <a class="btn btn-info-extra" data-toggle="collapse" href="#collapseExample2" role="button"
+              aria-expanded="true" aria-controls="collapseExample2">
               Información Adicional
               <i class="fa fa-plus" aria-hidden="true"></i>
             </a>
@@ -237,117 +233,7 @@
         </div>
       </div>
     </div>
-    </div>
-    </div>
   </section>
-
-  <!-- <section class="related padding-top-bottom">
-    <h1>Related Product</h1>
-    <div class="multiple-items container">
-      <div class="product-flex">
-        <div class="product-item">
-          <img src="assets/img/item-02.jpg" alt="">
-          <div class="mask-product">
-            <button class="btn-principal">ADD TO CARD</button>
-            <i class="fa fa-heart-o"></i>
-            <i class="fa fa-heart"></i>
-          </div>
-          <div class="product-sale">
-            <p>Sale</p>
-          </div>
-        </div>
-        <div class="description-product">
-          <p class="title-product"> Herschel Supply co 25l</p>
-        </div>
-        <h4 class="price-product">$75</h4>
-      </div>
-      <div class="product-flex">
-        <div class="product-item">
-          <img src="assets/img/item-02.jpg" alt="">
-          <div class="mask-product">
-            <button class="btn-principal">ADD TO CARD</button>
-            <i class="fa fa-heart-o"></i>
-            <i class="fa fa-heart"></i>
-          </div>
-          <div class="product-sale">
-            <p>Sale</p>
-          </div>
-        </div>
-        <div class="description-product">
-          <p class="title-product"> Herschel Supply co 25l</p>
-        </div>
-        <h4 class="price-product">$75</h4>
-      </div>
-      <div class="product-flex">
-        <div class="product-item">
-          <img src="assets/img/item-02.jpg" alt="">
-          <div class="mask-product">
-            <button class="btn-principal">ADD TO CARD</button>
-            <i class="fa fa-heart-o"></i>
-            <i class="fa fa-heart"></i>
-          </div>
-          <div class="product-sale">
-            <p>Sale</p>
-          </div>
-        </div>
-        <div class="description-product">
-          <p class="title-product"> Herschel Supply co 25l</p>
-        </div>
-        <h4 class="price-product">$75</h4>
-      </div>
-      <div class="product-flex">
-        <div class="product-item">
-          <img src="assets/img/item-02.jpg" alt="">
-          <div class="mask-product">
-            <button class="btn-principal">ADD TO CARD</button>
-            <i class="fa fa-heart-o"></i>
-            <i class="fa fa-heart"></i>
-          </div>
-          <div class="product-sale">
-            <p>Sale</p>
-          </div>
-        </div>
-        <div class="description-product">
-          <p class="title-product"> Herschel Supply co 25l</p>
-        </div>
-        <h4 class="price-product">$75</h4>
-      </div>
-      <div class="product-flex">
-        <div class="product-item">
-          <img src="assets/img/item-02.jpg" alt="">
-          <div class="mask-product">
-            <button class="btn-principal">ADD TO CARD</button>
-            <i class="fa fa-heart-o"></i>
-            <i class="fa fa-heart"></i>
-          </div>
-          <div class="product-sale">
-            <p>Sale</p>
-          </div>
-        </div>
-        <div class="description-product">
-          <p class="title-product"> Herschel Supply co 25l</p>
-        </div>
-        <h4 class="price-product">$75</h4>
-      </div>
-      <div class="product-flex">
-        <div class="product-item">
-          <img src="assets/img/item-02.jpg" alt="">
-          <div class="mask-product">
-            <button class="btn-principal">ADD TO CARD</button>
-            <i class="fa fa-heart-o"></i>
-            <i class="fa fa-heart"></i>
-          </div>
-          <div class="product-sale">
-            <p>Sale</p>
-          </div>
-        </div>
-        <div class="description-product">
-          <p class="title-product"> Herschel Supply co 25l</p>
-        </div>
-        <h4 class="price-product">$75</h4>
-      </div>
-    </div>
-  </section> -->
   <section class="related">
     <div class="container padding-top-bottom">
       <div class="mark-water">
@@ -420,17 +306,37 @@
             <p>New</p>
           </div>
         </div>
-        <div class="item-product">
-          f
+        <div class="product-flex">
+          <div class="product-item">
+            <img src="assets/img/product-4.png" alt="">
+            <div class="mask-product">
+              <button class="btn-principal">ADD TO CARD</button>
+              <i class="fa fa-heart-o"></i>
+              <i class="fa fa-heart"></i>
+            </div>
+            <div class="description-product">
+              <p class="title-product"> Herschel Supply co 25l</p>
+            </div>
+          </div>
+          <div class="product-new">
+            <p>New</p>
+          </div>
         </div>
-        <div class="item-product">
-          f
-        </div>
-        <div class="item-product">
-          f
-        </div>
-        <div class="item-product">
-          f
+        <div class="product-flex">
+          <div class="product-item">
+            <img src="assets/img/product-4.png" alt="">
+            <div class="mask-product">
+              <button class="btn-principal">ADD TO CARD</button>
+              <i class="fa fa-heart-o"></i>
+              <i class="fa fa-heart"></i>
+            </div>
+            <div class="description-product">
+              <p class="title-product"> Herschel Supply co 25l</p>
+            </div>
+          </div>
+          <div class="product-new">
+            <p>New</p>
+          </div>
         </div>
       </div>
     </div>
@@ -495,15 +401,17 @@
   <a href="https://wa.me/584121601282" , target="_blank">
     <i class="fa fa-whatsapp float-ws" aria-hidden="true"></i>
   </a>
-  <div class="slideshow">
+  <!-- <div class="slideshow">
     <i class="fa fa-chevron-up" aria-hidden="true"></i>
-  </div>
+  </div> -->
   <img class="parallax-flor" src="assets/img/flor-1.png" alt="">
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script type="text/javascript" src="assets/js/wow.js"></script>

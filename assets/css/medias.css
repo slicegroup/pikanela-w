@@ -3,6 +3,15 @@
     font-size: 13px;
   }
 
+  header {
+    display: none!important;
+  }
+
+  .fixed-2 {
+    visibility: visible!important;
+    top: 0!important;
+  }
+
   /* text banner */
   .text-banner h1::before {
    display: none;
@@ -33,18 +42,21 @@
     height: 35rem;  
   }
 
-  .slick-next-product{
-    right: 0;
-
-  }
-  
-  .slick-prev-product {
-    left: 0;
-  }
-
   .box-shipping:nth-child(2){
     padding: 5rem;
   }
+
+  .tab-img .padding-top-bottom {
+    padding-top: 10rem!important;
+  }
+
+  /* .slick-prev-product {
+    left: initial;
+  }
+
+  .slick-next-product {
+    right: initial;
+  } */
 
   /* Fixed flor */
 
@@ -74,6 +86,16 @@
 
   .bg-footer {
     width: 25rem;
+  }
+
+  /* details */
+
+  .vertical-img img {
+    height: 4rem;
+  }
+
+  .tab-img .title-product {
+    margin-top: 2rem;
   }
 }
 
