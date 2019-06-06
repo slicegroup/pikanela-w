@@ -47,14 +47,14 @@ $(document).ready(function () {
   $(window).on("scroll", function () {
     if ($(window).scrollTop() >= 130) {
       $(".fixed-2").addClass('show-visib')
-      $('header').css('display', 'none')
+      // $('header').css('display', 'none')
       // $('.logo-fixed').css('display', 'initial')
       // $('.search-fixed').css('display', 'initial')
     } else {
       // $("header").removeClass('nav-fixed');
       $(".fixed-2").removeClass('show-visib')
 
-      $('header').css('display', 'initial')
+      // $('header').css('display', 'initial')
       // $('.logo-fixed').css('display', 'none')
       // $('.search-fixed').css('display', 'none')
     }
