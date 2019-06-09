@@ -23,10 +23,12 @@
       <div class="box-left-social">
         <i class="fa fa-instagram" aria-hidden="true"></i>
       </div>
+      <a href="<?php bloginfo('url'); ?>/index.php">
       <img class="logo-initial" src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-white.png" alt="">
+      </a>
       <div class="box-right-social">
         <i class="fa fa-search" aria-hidden="true"></i>
-        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+        <a href="<?php bloginfo('url'); ?>/cart"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
       </div>
     </div>
     <nav class=" navbar navbar-expand-xl navbar-light container">
@@ -37,7 +39,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Inicio
+            <a class="nav-link" href="<?php bloginfo('url'); ?>/index.php">Inicio
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -57,12 +59,12 @@
             <a class="nav-link" href="#sale">Ropa de playa</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=about.html>¿Quienes Somos?</a>
+            <a class="nav-link" href="<?php bloginfo('url'); ?>/about.php">¿Quienes Somos?</a>
           </li>
           <li class="nav-item">
             <div class="box-right-social box-right-mobile">
               <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+              <a href="<?php bloginfo('url'); ?>/cart"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
             </div>
           </li>
         </ul>
@@ -72,7 +74,7 @@
 
   <nav class=" fixed-2 navbar navbar-expand-xl navbar-light">
     <div class="fixed-container container">
-      <a href="">
+      <a href="<?php bloginfo('url'); ?>/index.php">
         <img class="logo-fixed" src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-white2.png" alt="">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -82,7 +84,7 @@
       <div class="collapse navbar-collapse nav-flex" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Inicio
+            <a class="nav-link" href="<?php bloginfo('url'); ?>/index.php">Inicio
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -102,7 +104,7 @@
             <a class="nav-link" href="#sale">Ropa de playa</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">¿Quienes Somos?</a>
+            <a class="nav-link" href="<?php bloginfo('url'); ?>/about.php">¿Quienes Somos?</a>
           </li>
         </ul>
         <i class="fa fa-search search-fixed" aria-hidden="true"></i>

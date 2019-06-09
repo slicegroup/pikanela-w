@@ -15,6 +15,8 @@
  * @version 3.6.0
  */
 
+
+
 defined( 'ABSPATH' ) || exit;
 
 global $product;
@@ -24,11 +26,13 @@ global $product;
  *
  * @hooked wc_print_notices - 10
  */
+
+// get_template_part('partials/header-2'); 
 do_action( 'woocommerce_before_single_product' );
 
 if ( post_password_required() ) {
-	echo get_the_password_form(); // WPCS: XSS ok.
-	return;
+  echo get_the_password_form(); // WPCS: XSS ok.
+  return;
 }
 ?>
 
@@ -36,42 +40,29 @@ if ( post_password_required() ) {
 
 
 
-  <section class="tab-img">
+
+  <section  id="product-<?php the_ID(); ?>" class="tab-img" style="padding-top: 100px;">
+  
     <div class="container padding-top-bottom">
       <div class="row">
-        <div class="col-lg-7 details-flex">
-          <div class="nav vertical-img flex-column nav-pills container" id="v-pills-tab" role="tablist"
-            aria-orientation="vertical">
-            <a class="nav-link active hover" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
-              aria-controls="v-pills-home" aria-selected="true">
-              <img src="assets/img/product-1.png">
-            </a>
-            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-              aria-controls="v-pills-profile" aria-selected="false">
-              <img src="assets/img/product-2.png">
-            </a>
-            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
-              aria-controls="v-pills-messages" aria-selected="false">
-              <img src="assets/img/product-1.png">
-            </a>
-          </div>
-          <div class="tab-content content-details" id="v-pills-tabContent">
-            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-              <img src="assets/img/product-1.png">
-            </div>
-            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-              <img src="assets/img/product-2.png">
-            </div>
-            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-              <img src="assets/img/product-1.png">
-            </div>
-          </div>
+        <div class="col-lg-7">
+          
+                <?php
+          /**
+           * Hook: woocommerce_before_single_product_summary.
+           *
+           * @hooked woocommerce_show_product_sale_flash - 10
+           * @hooked woocommerce_show_product_images - 20
+           */
+          do_action( 'woocommerce_before_single_product_summary' );
+          ?>
+
         </div>
         <div class="col-lg-5">
           <div class="container">
             <div class="description-product">
-              <p class="title-product"> Herschel Supply co 25l</p>
-              <h4 class="price-product">$75</h4>
+              <p class="title-product"> <?php the_title(); ?></p>
+              <h4 class="price-product"><?php echo $product->get_price_html(); ?></h4>
               <p class="text-product">Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris
                 consequat ornare feugiat.</p>
             </div>
@@ -115,13 +106,26 @@ if ( post_password_required() ) {
               <div class="col-lg-10">
 
                 <div class="product-cant">
-                  <div class="number-input">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
-                    <input class="quantity" min="0" name="quantity" value="1" type="number">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                      class="plus"></button>
-                  </div>
-                  <button class="btn-principal">ADD TO CARD</button>
+                  <form class="cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
+                <?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
+
+                <?php
+                do_action( 'woocommerce_before_add_to_cart_quantity' );
+
+                woocommerce_quantity_input( array(
+                  'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
+                  'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
+                  'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : $product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
+                ) );
+
+                do_action( 'woocommerce_after_add_to_cart_quantity' );
+                ?>
+
+                <button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button btn-principal alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+
+                <?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
+              </form>
+          
                 </div>
               </div>
             </div>
@@ -134,9 +138,7 @@ if ( post_password_required() ) {
             </a>
             <div class="collapse" id="collapseExample">
               <div class="card card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil
-                anim keffiyeh helvetica,
-                craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                <?php the_content(); ?>
               </div>
             </div>
           </div>
@@ -148,9 +150,7 @@ if ( post_password_required() ) {
             </a>
             <div class="collapse show" id="collapseExample2">
               <div class="card card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil
-                anim keffiyeh helvetica,
-                craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                <?php the_excerpt(); ?>
               </div>
             </div>
           </div>
@@ -166,11 +166,17 @@ if ( post_password_required() ) {
         <p class="text-water">Comprar ahora</p>
       </div>
       <div class="multiple-product">
-        <div class="product-flex">
+        <?php $args = array(
+              'post_type' => 'product',
+              'posts_per_page' => 5);
+        $loop = new WP_Query($args);
+        ?>
+        <?php while ($loop->have_posts()) : $loop->the_post();  global $product; ?>
+        <div class="product-flex ">
           <div class="product-item">
-            <img src="assets/img/product-7.png" alt="">
+            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
             <div class="mask-product">
-              <button class="btn-principal">ADD TO CARD</button>
+              <a href="<?php the_permalink(); ?>" class="btn-principal">VER MÁS</a>
               <i class="fa fa-heart-o"></i>
               <i class="fa fa-heart"></i>
             </div>
@@ -178,107 +184,19 @@ if ( post_password_required() ) {
               <p>New</p>
             </div>
             <div class="description-product">
-              <p class="title-product"> Herschel Supply co 25l</p>
+              <p class="title-product"> <?php the_title(); ?></p>
             </div>
           </div>
         </div>
-        <div class="product-flex">
-          <div class="product-item">
-            <img src="assets/img/product-2.png" alt="">
-            <div class="mask-product">
-              <button class="btn-principal">ADD TO CARD</button>
-              <i class="fa fa-heart-o"></i>
-              <i class="fa fa-heart"></i>
-            </div>
-            <div class="product-new">
-              <p>New</p>
-            </div>
-            <div class="description-product">
-              <p class="title-product"> Herschel Supply co 25l</p>
-            </div>
-          </div>
-        </div>
-        <div class="product-flex">
-          <div class="product-item">
-            <img src="assets/img/product-3.png" alt="">
-            <div class="mask-product">
-              <button class="btn-principal">ADD TO CARD</button>
-              <i class="fa fa-heart-o"></i>
-              <i class="fa fa-heart"></i>
-            </div>
-            <div class="product-new">
-              <p>New</p>
-            </div>
-            <div class="description-product">
-              <p class="title-product"> Herschel Supply co 25l</p>
-            </div>
-          </div>
-        </div>
-        <div class="product-flex">
-          <div class="product-item">
-            <img src="assets/img/product-4.png" alt="">
-            <div class="mask-product">
-              <button class="btn-principal">ADD TO CARD</button>
-              <i class="fa fa-heart-o"></i>
-              <i class="fa fa-heart"></i>
-            </div>
-            <div class="description-product">
-              <p class="title-product"> Herschel Supply co 25l</p>
-            </div>
-          </div>
-          <div class="product-new">
-            <p>New</p>
-          </div>
-        </div>
-        <div class="product-flex">
-          <div class="product-item">
-            <img src="assets/img/product-4.png" alt="">
-            <div class="mask-product">
-              <button class="btn-principal">ADD TO CARD</button>
-              <i class="fa fa-heart-o"></i>
-              <i class="fa fa-heart"></i>
-            </div>
-            <div class="description-product">
-              <p class="title-product"> Herschel Supply co 25l</p>
-            </div>
-          </div>
-          <div class="product-new">
-            <p>New</p>
-          </div>
-        </div>
-        <div class="product-flex">
-          <div class="product-item">
-            <img src="assets/img/product-4.png" alt="">
-            <div class="mask-product">
-              <button class="btn-principal">ADD TO CARD</button>
-              <i class="fa fa-heart-o"></i>
-              <i class="fa fa-heart"></i>
-            </div>
-            <div class="description-product">
-              <p class="title-product"> Herschel Supply co 25l</p>
-            </div>
-          </div>
-          <div class="product-new">
-            <p>New</p>
-          </div>
-        </div>
+<?php endwhile; ?>
       </div>
     </div>
   </section>
 
 
 
-<div id="product-<?php the_ID(); ?>" style="display: none;" <?php wc_product_class( '', $product ); ?>>
+<div id="product-<?php the_ID(); ?>"  style="display: none;" <?php wc_product_class( '', $product ); ?>>
 
-	<?php
-	/**
-	 * Hook: woocommerce_before_single_product_summary.
-	 *
-	 * @hooked woocommerce_show_product_sale_flash - 10
-	 * @hooked woocommerce_show_product_images - 20
-	 */
-	do_action( 'woocommerce_before_single_product_summary' );
-	?>
 
 	<div class="summary entry-summary">
 		<?php
@@ -311,3 +229,9 @@ if ( post_password_required() ) {
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
+
+<style>
+  #sidebar{
+    display: none;;
+  }
+</style>

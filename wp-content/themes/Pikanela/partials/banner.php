@@ -1,6 +1,6 @@
      <section class="banner">
     <div class="carousel-banner">
-    <?php $args = array( 'post_type' => 'banner', 'posts_per_page' => 1); ?>   
+    <?php $args = array( 'post_type' => 'banner'); ?>   
     <?php $loop = new WP_Query( $args ); ?>
      <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 

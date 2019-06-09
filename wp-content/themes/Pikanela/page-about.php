@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section class="banner-about">
+<section class="banner-about " style="padding-top: 150px;">
   <div class="text-banner padding-top-bottom">
     <h2>¿Quienes Somos?</h2>
   </div>
@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-5 ">
-        <img class="about-img" src="assets/img/file3-1.jpeg" alt="">
+        <img class="about-img img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/file3-1.jpeg" alt="">
       </div>
       <div class="col-lg-7  pl-5">
         <h2 class="title-about">Nuestra Historia</h2>

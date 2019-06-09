@@ -1,0 +1,34 @@
+2019-06-09T03:48:07+00:00 CRITICAL Uncaught Error: Class 'FrmAppHelper' not found in /var/www/html/Pikanela-w/wp-content/themes/Pikanela/woocommerce/content-single-product.php:115
+Stack trace:
+#0 /var/www/html/Pikanela-w/wp-includes/template.php(724): require()
+#1 /var/www/html/Pikanela-w/wp-content/plugins/woocommerce/includes/wc-core-functions.php(195): load_template('/var/www/html/P...', false)
+#2 /var/www/html/Pikanela-w/wp-content/themes/Pikanela/woocommerce/single-product.php(36): wc_get_template_part('content', 'single-product')
+#3 /var/www/html/Pikanela-w/wp-includes/template-loader.php(78): include('/var/www/html/P...')
+#4 /var/www/html/Pikanela-w/wp-blog-header.php(19): require_once('/var/www/html/P...')
+#5 /var/www/html/Pikanela-w/index.php(17): require('/var/www/html/P...')
+#6 {main}
+  thrown in /var/www/html/Pikanela-w/wp-content/themes/Pikanela/woocommerce/content-single-product.php on line 115
+
+2019-06-09T03:55:35+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on null in /var/www/html/Pikanela-w/wp-content/plugins/woocommerce/includes/class-wc-cart.php:1850
+Stack trace:
+#0 /var/www/html/Pikanela-w/wp-content/themes/Pikanela/woocommerce/content-single-product.php(111): WC_Cart->get_product_subtotal(NULL, NULL)
+#1 /var/www/html/Pikanela-w/wp-includes/template.php(724): require('/var/www/html/P...')
+#2 /var/www/html/Pikanela-w/wp-content/plugins/woocommerce/includes/wc-core-functions.php(195): load_template('/var/www/html/P...', false)
+#3 /var/www/html/Pikanela-w/wp-content/themes/Pikanela/woocommerce/single-product.php(36): wc_get_template_part('content', 'single-product')
+#4 /var/www/html/Pikanela-w/wp-includes/template-loader.php(78): include('/var/www/html/P...')
+#5 /var/www/html/Pikanela-w/wp-blog-header.php(19): require_once('/var/www/html/P...')
+#6 /var/www/html/Pikanela-w/index.php(17): require('/var/www/html/P...')
+#7 {main}
+  thrown in /var/www/html/Pikanela-w/wp-content/plugins/woocommerce/includes/class-wc-cart.php on line 1850
+
+2019-06-09T16:20:43+00:00 CRITICAL Uncaught Error: Call to a member function get_price_html() on string in /var/www/html/Pikanela-w/wp-content/themes/Pikanela/woocommerce/content-single-product.php:23
+Stack trace:
+#0 /var/www/html/Pikanela-w/wp-includes/template.php(724): require()
+#1 /var/www/html/Pikanela-w/wp-content/plugins/woocommerce/includes/wc-core-functions.php(195): load_template('/var/www/html/P...', false)
+#2 /var/www/html/Pikanela-w/wp-content/themes/Pikanela/woocommerce/single-product.php(36): wc_get_template_part('content', 'single-product')
+#3 /var/www/html/Pikanela-w/wp-includes/template-loader.php(78): include('/var/www/html/P...')
+#4 /var/www/html/Pikanela-w/wp-blog-header.php(19): require_once('/var/www/html/P...')
+#5 /var/www/html/Pikanela-w/index.php(17): require('/var/www/html/P...')
+#6 {main}
+  thrown in /var/www/html/Pikanela-w/wp-content/themes/Pikanela/woocommerce/content-single-product.php on line 23
+
