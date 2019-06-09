@@ -15,23 +15,34 @@
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/animate.css">
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/main.css">
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/medias.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/product.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/about.css">
 </head>
 
 <body>
+   <?php $current_file =  $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+   $url_page = 'localhost/Pikanela-w/';
+           ?> 
   <header class="header-index">
-    <div class="container flex-container">
+
+    <div class="container flex-container <?php if ($current_file != $url_page){ echo 'navbar-product'; }?>">
       <div class="box-left-social">
         <i class="fa fa-instagram" aria-hidden="true"></i>
       </div>
       <a href="<?php bloginfo('url'); ?>/index.php">
-      <img class="logo-initial" src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-white.png" alt="">
+        <?php if ($current_file != $url_page):?>
+          <img class="logo-initial" src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-black.png" alt="">
+          <?php else: ?>
+          <img class="logo-initial" src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-white.png" alt="">
+        <?php endif?>
+      
       </a>
       <div class="box-right-social">
         <i class="fa fa-search" aria-hidden="true"></i>
         <a href="<?php bloginfo('url'); ?>/cart"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
       </div>
     </div>
-    <nav class=" navbar navbar-expand-xl navbar-light container">
+    <nav class=" navbar navbar-expand-xl navbar-light container <?php if ($current_file != $url_page){ echo 'navbar-product'; }?>">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -59,7 +70,7 @@
             <a class="nav-link" href="#sale">Ropa de playa</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php bloginfo('url'); ?>/about.php">¿Quienes Somos?</a>
+            <a class="nav-link" href="<?php bloginfo('url'); ?>/about">¿Quienes Somos?</a>
           </li>
           <li class="nav-item">
             <div class="box-right-social box-right-mobile">
@@ -104,7 +115,7 @@
             <a class="nav-link" href="#sale">Ropa de playa</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php bloginfo('url'); ?>/about.php">¿Quienes Somos?</a>
+            <a class="nav-link" href="<?php bloginfo('url'); ?>/about">¿Quienes Somos?</a>
           </li>
         </ul>
         <i class="fa fa-search search-fixed" aria-hidden="true"></i>

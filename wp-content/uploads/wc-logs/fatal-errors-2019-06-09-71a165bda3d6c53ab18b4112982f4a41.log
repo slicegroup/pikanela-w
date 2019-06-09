@@ -32,3 +32,7 @@ Stack trace:
 #6 {main}
   thrown in /var/www/html/Pikanela-w/wp-content/themes/Pikanela/woocommerce/content-single-product.php on line 23
 
+2019-06-09T19:01:49+00:00 CRITICAL syntax error, unexpected end of file, expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /var/www/html/Pikanela-w/wp-content/themes/Pikanela/header.php on line 118
+
+2019-06-09T19:07:04+00:00 CRITICAL syntax error, unexpected 'else' (T_ELSE) in /var/www/html/Pikanela-w/wp-content/themes/Pikanela/header.php on line 35
+
