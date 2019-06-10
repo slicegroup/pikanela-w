@@ -103,3 +103,100 @@ function precio_desde( $price, $product ) {
 add_filter( 'woocommerce_variable_sale_price_html', 'precio_desde', 10, 2 );
 add_filter( 'woocommerce_variable_price_html', 'precio_desde', 10, 2 );
 /******************quitar rango de precios*****************/
+
+
+
+// Minimum CSS to remove +/- default buttons on input field type number
+add_action( 'wp_head' , 'custom_quantity_fields_css' );
+function custom_quantity_fields_css(){
+    ?>
+    <style>
+    .quantity input::-webkit-outer-spin-button,
+    .quantity input::-webkit-inner-spin-button {
+        display: none;
+        margin: 0;
+    }
+    .quantity input.qty {
+        appearance: textfield;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+    }
+    </style>
+    <?php
+}
+
+// agregar botones negativos y positivos en input type number Quantity de woocommerce
+add_action( 'wp_footer' , 'custom_quantity_fields_script' );
+function custom_quantity_fields_script(){
+    ?>
+    <script type='text/javascript'>
+    jQuery( function( $ ) {
+        if ( ! String.prototype.getDecimals ) {
+            String.prototype.getDecimals = function() {
+                var num = this,
+                    match = ('' + num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+                if ( ! match ) {
+                    return 0;
+                }
+                return Math.max( 0, ( match[1] ? match[1].length : 0 ) - ( match[2] ? +match[2] : 0 ) );
+            }
+        }
+        // Quantity "plus" and "minus" buttons
+        $( document.body ).on( 'click', '.plus, .minus', function() {
+            var $qty        = $( this ).closest( '.quantity' ).find( '.qty'),
+                currentVal  = parseFloat( $qty.val() ),
+                max         = parseFloat( $qty.attr( 'max' ) ),
+                min         = parseFloat( $qty.attr( 'min' ) ),
+                step        = $qty.attr( 'step' );
+
+            // Format values
+            if ( ! currentVal || currentVal === '' || currentVal === 'NaN' ) currentVal = 0;
+            if ( max === '' || max === 'NaN' ) max = '';
+            if ( min === '' || min === 'NaN' ) min = 0;
+            if ( step === 'any' || step === '' || step === undefined || parseFloat( step ) === 'NaN' ) step = 1;
+
+            // Change the value
+            if ( $( this ).is( '.plus' ) ) {
+                if ( max && ( currentVal >= max ) ) {
+                    $qty.val( max );
+                } else {
+                    $qty.val( ( currentVal + parseFloat( step )).toFixed( step.getDecimals() ) );
+                }
+            } else {
+                if ( min && ( currentVal <= min ) ) {
+                    $qty.val( min );
+                } else if ( currentVal > 0 ) {
+                    $qty.val( ( currentVal - parseFloat( step )).toFixed( step.getDecimals() ) );
+                }
+            }
+
+            // Trigger change event
+            $qty.trigger( 'change' );
+        });
+    });
+    </script>
+    <?php
+}
+
+// colocar en el title el nombre de la page 
+function wpdocs_filter_wp_title( $title, $sep ) {
+    global $paged, $page;
+ 
+    if ( is_feed() )
+        return $title;
+ 
+    // Add the site name.
+    $title .= get_bloginfo( 'name' );
+ 
+    // Add the site description for the home/front page.
+    $site_description = get_bloginfo( 'description', 'display' );
+    if ( $site_description && ( is_home() || is_front_page() ) )
+        $title = "$title $sep $site_description";
+ 
+    // Add a page number if necessary.
+    if ( $paged >= 2 || $page >= 2 )
+        $title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+
+    return $title;
+}
+add_filter( 'wp_title', 'wpdocs_filter_wp_title', 10, 2 );

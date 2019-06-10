@@ -6,46 +6,30 @@
         <p class="text-water">Nuestras categorias</p>
       </div>
       <div class="multiple-categories wow fadeInUp">
-        <div class="slick-category">
-          <div class="item-category" , style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/category.png)">
-            <div class="name-category">
-              <p>Calzado</p>
-            </div>
-          </div>
-        </div>
-        <div class="slick-category">
+       <?php $args = array(
 
-          <div class="item-category" , style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/category.png)">
-            <div class="
-              name-category">
-              <p>Bolsos</p>
-            </div>
-          </div>
-        </div>
-        <div class="slick-category">
-          <div class="item-category" , style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/category.png)">
-            <div class="
-                  name-category">
-              <p>Sombreros</p>
-            </div>
-          </div>
-        </div>
-        <div class="slick-category">
-          <div class="item-category" , style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/category.png)">
+            'orderby' => 'slug',
+            'order' => 'ASC'
+            );
+            $product_categories = get_terms('product_cat', $args);
 
-            <div class="
-                      name-category">
-              <p>Accesorios</p>
-            </div>
-          </div>
-        </div>
-        <div class="slick-category">
+            foreach ($product_categories as $product_category) { ?>
+                      
+                    <?php $thumbnail_id = get_woocommerce_term_meta($product_category->term_id, 'thumbnail_id', true);
 
-          <div class="item-category" , style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/category.png)">
-            <div class="name-category">
-              <p>Ropa de Playa</p>
+                          $images = wp_get_attachment_image_src($thumbnail_id, 'medium'); ?>
+
+            <div class="slick-category">
+              <a href="<?php echo $url_category = get_term_link( $product_category ) ?>" class="item-category" , style="background-image: url(<?php echo $images[0]; ?>)">
+                <div class="name-category">
+                  <p><?php echo $product_category->name; ?></p>
+                </div>
+              </a>
             </div>
-          </div>
+          <?php
+
+              }
+            ?>
         </div>
       </div>
   </section>
