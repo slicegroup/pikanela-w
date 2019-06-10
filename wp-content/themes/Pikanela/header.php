@@ -38,8 +38,14 @@
         <?php endif?>
       
       </a>
-      <div class="box-right-social">
-        <i class="fa fa-search" aria-hidden="true"></i>
+      <div class="box-right-social" style="display: flex; margin-right: 15px; ">
+        <form action="<?php echo esc_url( $action_link ); ?>" id="frm_search_form" method="get" class="searchform">      
+           <div id="custom-search">
+              <input type="text" name="s" class="search-query" placeholder="Buscar" />
+              <button type="button"> <i class='fa fa-search' <?php if ($current_file == $url_page){ echo 'style="color: white !important"'; }?>></i></button>
+              
+            </div>
+         </form> 
         <a href="<?php bloginfo('url'); ?>/cart"><i <?php if ($current_file != $url_page){ echo 'style="color: #333333!important"'; }?> class="fa fa-shopping-bag" aria-hidden="true"></i></a>
       </div>
     </div>

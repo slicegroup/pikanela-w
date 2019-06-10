@@ -237,6 +237,103 @@ header {
   flex-direction: column;
 }
 
+/* search model */
+
+
+
+#custom-search .search-query {
+  padding: 15px;
+  width: 50px;
+  height: 40px;
+  border: 2px solid transparent;
+  background-color: transparent;
+  color: transparent;
+  font-size: 15px;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  margin-bottom: 0;
+}
+
+/* Hide Text when unfocused plus fallbacks */
+#custom-search .search-query::placeholder {
+  color: transparent;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+#custom-search .search-query::-webkit-input-placeholder {
+  color: transparent;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+#custom-search .search-query::-moz-placeholder {
+  color: transparent;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+#custom-search .search-query:-moz-placeholder {
+  color: transparent;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+#custom-search .search-query:-ms-input-placeholder {
+  color: transparent;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+/* Style when Search is selected */
+#custom-search .search-query:focus {
+  border-radius: 50px;
+  border: 2px solid white;
+  background-color: #ffffff;
+  width: 250px;
+  color: #000;
+}
+
+/* Style for placeholder value plus fallbacks */
+#custom-search .search-query:focus::placeholder {
+  color: #cccccc;
+}
+
+#custom-search .search-query:focus::-webkit-input-placeholder {
+  color: #cccccc;
+}
+
+#custom-search .search-query:focus::-moz-placeholder {
+  color: transparent;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+#custom-search .search-query:focus::-moz-placeholder {
+  color: transparent;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+#custom-search .search-query:focus:-ms-input-placeholder {
+  color: #cccccc;
+}
+
+/* Style for Button */
+#custom-search button {
+  border: 0;
+  background: none;
+  padding: 0;
+  width: 0;
+  margin-top: -5px;
+  position: relative;
+  top: -1px;
+  left: -29px;
+  margin-bottom: 0;
+  border-radius: 3px;
+}
+
+
 .text-banner h1 {
   font-size: 5rem;
   font-weight: 900;
