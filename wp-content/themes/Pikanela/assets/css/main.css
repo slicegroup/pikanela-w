@@ -105,6 +105,9 @@ header {
   text-transform: uppercase;
   transition: .5s;
 }
+.details-pro .btn-principal{
+  margin-left: 10px;
+}
 
 .btn-principal:hover {
   background-color: #d66a7f;

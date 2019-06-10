@@ -40,8 +40,7 @@ if ( post_password_required() ) {
 
 
 
-
-  <section  id="product-<?php the_ID(); ?>" class="tab-img" style="padding-top: 100px;">
+  <section  id="product-<?php the_ID(); ?>" class="tab-img details-pro" style="padding-top: 100px;">
   
     <div class="container padding-top-bottom">
       <div class="row">
@@ -106,7 +105,7 @@ if ( post_password_required() ) {
               <div class="col-lg-10">
 
                 <div class="product-cant">
-                  <form class="cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
+                  <form class="cart cart-flex" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
                 <?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
                 <?php
@@ -235,3 +234,4 @@ if ( post_password_required() ) {
     display: none;;
   }
 </style>
+

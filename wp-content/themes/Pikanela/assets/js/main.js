@@ -160,3 +160,5 @@ $('.multiple-categories').slick({
     }
   ]
 });
+
+
