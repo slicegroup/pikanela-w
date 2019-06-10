@@ -256,9 +256,24 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-.cart-flex{
+.cart-flex, .custom-v{
       width: 100%;
     display: flex;
+}
+
+.variation-none .woocommerce-Price-amount, .sku_wrapper{
+  display: none !important;
+}
+
+.variation-none select{
+    border: 1px solid #c1c1c1;
+    padding: 10px 25px;
+    border-radius: 0;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    color: #555555;
+    background: transparent;
+    width: 100%;
 }
 .number-input{
   outline:none;

@@ -65,68 +65,23 @@ if ( post_password_required() ) {
               <p class="text-product">Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris
                 consequat ornare feugiat.</p>
             </div>
-            <div class="row">
-              <div class="col-2 drop-size">
-                <span>Size</span>
-              </div>
-              <div class="col-10">
-                <div class="dropdown drop-size">
-                  <a class="btn dropdown-toggle" title="Choose an option" href="#" role="button" id="dropdownMenuLink"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Choose an option
-                  </a>
-                  <div class="dropdown-menu menu-drop active" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item drop-item" href="#">Size S</a>
-                    <a class="dropdown-item drop-item" href="#">Size M</a>
-                    <a class="dropdown-item drop-item" href="#">Size L</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-2 drop-color">
-                <span>Color</span>
-              </div>
-              <div class="col-10">
-                <div class="dropdown drop-color">
-                  <a class="btn dropdown-toggle" href="#" title="Choose an option" role="button" id="dropdownMenuLink"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Choose an option
-                  </a>
-                  <div class="dropdown-menu menu-drop active" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item drop-item" href="#">Red</a>
-                    <a class="dropdown-item drop-item" href="#">Blue</a>
-                    <a class="dropdown-item drop-item" href="#">Black</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-2">
-
-              </div>
-              <div class="col-lg-10">
-
-                <div class="product-cant">
-                  <form class="cart cart-flex" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
-                <?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
-
-                <?php
-                do_action( 'woocommerce_before_add_to_cart_quantity' );
-
-                woocommerce_quantity_input( array(
-                  'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
-                  'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
-                  'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : $product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
-                ) );
-
-                do_action( 'woocommerce_after_add_to_cart_quantity' );
-                ?>
-
-                <button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button btn-principal alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
-
-                <?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
-              </form>
-          
-                </div>
-              </div>
+            <div class="row variation-none">
+           
+               <?php
+              /**
+               * Hook: woocommerce_single_product_summary.
+               *
+               * @hooked woocommerce_template_single_title - 5
+               * @hooked woocommerce_template_single_rating - 10
+               * @hooked woocommerce_template_single_price - 10
+               * @hooked woocommerce_template_single_excerpt - 20
+               * @hooked woocommerce_template_single_add_to_cart - 30
+               * @hooked woocommerce_template_single_meta - 40
+               * @hooked woocommerce_template_single_sharing - 50
+               * @hooked WC_Structured_Data::generate_product_data() - 60
+               */
+              do_action( 'woocommerce_single_product_summary' );
+              ?>
             </div>
           </div>
           <div class="info-extra">
@@ -191,43 +146,12 @@ if ( post_password_required() ) {
       </div>
     </div>
   </section>
-
-
-
-<div id="product-<?php the_ID(); ?>"  style="display: none;" <?php wc_product_class( '', $product ); ?>>
-
-
-	<div class="summary entry-summary">
-		<?php
-		/**
-		 * Hook: woocommerce_single_product_summary.
-		 *
-		 * @hooked woocommerce_template_single_title - 5
-		 * @hooked woocommerce_template_single_rating - 10
-		 * @hooked woocommerce_template_single_price - 10
-		 * @hooked woocommerce_template_single_excerpt - 20
-		 * @hooked woocommerce_template_single_add_to_cart - 30
-		 * @hooked woocommerce_template_single_meta - 40
-		 * @hooked woocommerce_template_single_sharing - 50
-		 * @hooked WC_Structured_Data::generate_product_data() - 60
-		 */
-		do_action( 'woocommerce_single_product_summary' );
-		?>
-	</div>
-
-	<?php
-	/**
-	 * Hook: woocommerce_after_single_product_summary.
-	 *
-	 * @hooked woocommerce_output_product_data_tabs - 10
-	 * @hooked woocommerce_upsell_display - 15
-	 * @hooked woocommerce_output_related_products - 20
-	 */
-	do_action( 'woocommerce_after_single_product_summary' );
-	?>
-</div>
-
-<?php do_action( 'woocommerce_after_single_product' ); ?>
+d
+<style>
+  .variation-none .product_title {
+    display: none;
+  }
+</style>
 
 <style>
   #sidebar{

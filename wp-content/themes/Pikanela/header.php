@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Pikanela</title>
+ <title><?php wp_title('|', true, 'right'); ?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/font-awesome.min.css">
@@ -40,7 +40,7 @@
       </a>
       <div class="box-right-social">
         <i class="fa fa-search" aria-hidden="true"></i>
-        <a href="<?php bloginfo('url'); ?>/cart"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+        <a href="<?php bloginfo('url'); ?>/cart"><i <?php if ($current_file != $url_page){ echo 'style="color: #333333!important"'; }?> class="fa fa-shopping-bag" aria-hidden="true"></i></a>
       </div>
     </div>
     <nav class=" navbar navbar-expand-xl navbar-light container <?php if ($current_file != $url_page){ echo 'navbar-product'; }?>">
@@ -76,7 +76,7 @@
           <li class="nav-item">
             <div class="box-right-social box-right-mobile">
               <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-              <a href="<?php bloginfo('url'); ?>/cart"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+              <a href="<?php bloginfo('url'); ?>/cart"><i class="fa fa-shopping-bag" <?php if ($current_file != $url_page){ echo 'style="color: #333333!important"'; }?> aria-hidden="true"></i></a>
             </div>
           </li>
         </ul>
