@@ -53,7 +53,7 @@
     </div>
     <div class="payment container">
       <span>
-        <img src="<?php echo get_template_directory_uri(); ?>/<?php echo get_template_directory_uri(); ?>/assets/img/icons/paypal.png">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/paypal.png">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/visa.png">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/mastercard.png">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/express.png">

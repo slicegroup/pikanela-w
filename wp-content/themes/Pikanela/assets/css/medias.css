@@ -46,6 +46,14 @@
     height: 35rem;  
   }
 
+  .slick-prev-product {
+    left: -1.5rem;
+  }
+
+  .slick-next-product {
+    right: -1.5rem;
+  }
+  
   .box-shipping:nth-child(2){
     padding: 5rem;
   }

@@ -15,9 +15,11 @@
         <?php while ($loop->have_posts()) : $loop->the_post();  global $product; ?>
 
         <div class="col-lg-4 col-sm-6 col-md-4 item-blog ">
-          <div class="img-blog-1" style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>)"></div>
+          <div class="img-blog-1">
+          <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+          </div>
           <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-          <p><?php the_content(); ?></p>
+          <p><?php the_excerpt(); ?></p>
         </div>
         <?php endwhile; ?>
       </div>

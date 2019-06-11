@@ -24,9 +24,7 @@
             <div class="product-new">
               <p>New</p>
             </div>
-            <div class="description-product">
-              <p class="title-product"> <?php the_title(); ?></p>
-            </div>
+ 
           </div>
         </div>
 <?php endwhile; ?>

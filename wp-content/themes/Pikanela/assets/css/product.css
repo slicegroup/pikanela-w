@@ -354,14 +354,16 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .slick-next-product, .slick-prev-product {
-  align-items: center;
   color: #969696;
   border-radius: 50%;
   cursor: pointer;
-  top: 40%;
   position: absolute;
   transition: .5s;
   z-index: 999;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  top: 0;
 } 
 
 
